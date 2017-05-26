@@ -101,7 +101,7 @@ class GlusterCommand(object):
         thread = threading.Thread(target=command_thread)
         thread.start()
 
-        thread.join(self.timeout)
+        thread.join(cfg.CMD_TIMEOUT)
 
         if thread.is_alive():
             if cfg.debug:
